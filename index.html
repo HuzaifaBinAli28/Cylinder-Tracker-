@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cylinder Tracker</title>
+    <style>
+        /* Reset and Base Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #f57c00; /* Company accent color */
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 8px;
+        }
+
+        header img {
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* Main Container */
+        main {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Search Bar Styling */
+        #searchBox {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        form input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            min-width: 250px;  /* Larger input fields */
+        }
+
+        form button {
+            padding: 12px 20px;
+            background-color: #f57c00;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            min-width: 150px;  /* Larger button */
+        }
+
+        form button:hover {
+            background-color: #d35400;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f57c00;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px;
+        }
+
+        td button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        td button.edit {
+            background-color: #3498db;
+        }
+
+        td button.edit:hover {
+            background-color: #2874a6;
+        }
+
+        td button.delete {
+            background-color: #e74c3c;
+        }
+
+        td button.delete:hover {
+            background-color: #c0392b;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div>
+            <img src="logo.png" alt="Company Logo">
+        </div>
+        <h1>Cylinder Tracker</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <input type="text" id="searchBox" placeholder="Search cylinders by name or cylinder number..." oninput="searchStock()">
+
+        <form id="stockForm">
+            <input type="text" id="name" placeholder="Enter cylinder name" required>
+            <input type="text" id="cylinderNumber" placeholder="Enter cylinder number" required>
+            <button type="submit">Add Cylinder</button>
+        </form>
+
+        <table id="stockTable">
+            <thead>
+                <tr>
+                    <th>Cylinder Name</th>
+                    <th>Cylinder Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 Ibrahim Graphics. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
