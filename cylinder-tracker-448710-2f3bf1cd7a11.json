@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cylinder-tracker-448710",
+  "private_key_id": "2f3bf1cd7a1178c9ad4324c85d9107d4b15223c2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDH8V+GwCfm1ps1\n22z3NDC9CXtNT5nwKThZGcpjVq68iR2PV6LS5tX5SQYgqGqQ6Ap8f1h1FZsbbtoN\n7kAM3LaRd8RVi0/dKJC+WZ6sr25eoEIri9EumQKbFNrVSbE2NUPqRyN77WUOULx4\nRAy2EQNK6d9GO3lx4dUuS2R3bg99VZbPBnZvuXBPoB5yGgDBuR+v5pSQ3X8pNkH6\nVghGzPD3w8tua/9nbRQeu2cKC61OJTpQadlwTBLA5L35PgJHkIXjomx0YBTq9Qpb\nZy4vlI3WX3rzKapnnL1A60xiTs7gpBgPxmM+Dc7+YcUBVIb/uiZDFEp5+YlrsJ8z\n7IVh35A3AgMBAAECggEACnulMQj3iDRXTFV8ji3hbxl4qmu46MayF1Kki5A0No4p\nceY73+5NzxvdI0g0cicgXNLgCrkYk7GJSdkXtZtUdr/YGBrnE8B4bYQZ/Cukg0SV\nKfhS/hKN3uvfspAb2pMKkQisaE2tkmvfcQTMXJ1h77ZF+3llAcU/6p7Ct6Cz7wCL\nPxSHRkVmCUVA2sMh4XQAX6AklePeONP4Ld6rEZzZDNVcVZmj91WUKlibCbLNZbMS\n67vYa9p0+J+DVwvnK1MNvLFqtxmQjyE9TiEsYo30Ziz85/ckvUS1mKwzmg7+tw6x\n93I1CfLJ8pB8ky6kp82/IK1mB+u/wu9fZaL0ynwcSQKBgQD65QtbGDQ3TkVYgOiP\n+DmJDf/cw6wDiISBc4fuJ/zmm2sScgTjGvA57XTIysjOqiM3AYrfI5C/WMZkV+6E\nNIf+ewPLZLiQsXpF5L7y0ZRVOLFZwFiyrr8zDeaKjDILZCiEYAUW+OUs2b4Tefmn\nBsy6zP6RD3NoK/uoEkjlsgaFGQKBgQDMAulXWMBv6pZUP9Mb6g68kyfmXvZGQQaN\nCNqnJg2ZAXWf7vjEPO+BTvetBzl11GCdizTDj/rWfSjOPs6KmKU6BrvGLWXBdYG9\nAg+7APdG29EUlq8XPG0+dfeaEdHBgg4Gmr1dg3LccBQlPeTDKn6BNPmETSntGveG\nJZV3VT6ZzwKBgFMQ9juIvfD5pxfwRg80fcgUrHupBRB+aHB7kauV7bNkDYUj3t5a\nEuL67Ul1ahqSVepmRlYubkQL3lNmkX+P7N6iV9VFWZ3+RJ9TZqz6GoREquMuPa+b\nD46VsZh5ZjBDTu7U45qBeU7qIHZOUguswqeuKzJXzTvWJBG3TA9Qa7wxAoGBAKbT\n2qyqzvK2CqhqaN/yzoo2a/JexVU953V9QBBfdc8g+mcGrDcM/W3ofXDo73wDZ95s\n74DcRGsRfkTp50w+9x40U2kDxqokxSsifGqXp54yMw97CUMfDtZ88TT0TWrIR1/v\nOds2mr7YiCDMND3Eih5ui3w8/YP/AVqZcVhcRQzRAoGBALQ7/C2pKuU7B1r218iV\n2AcjXEXoduFI58ntHd0aQM2cXdIl26QSuhT0Yl2Nv6q9aUtD5xONgnEFT5jSH1LQ\n4jIIcmkg+Isoi00pyoo9apDOsLFT6oBkAFbOcolr7sdw5qXdey9Q1soq3yFNQmb8\nepu22RtSHtB49p5wDNZjMlhN\n-----END PRIVATE KEY-----\n",
+  "client_email": "cylinder-tracker@cylinder-tracker-448710.iam.gserviceaccount.com",
+  "client_id": "106792648955013681376",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cylinder-tracker%40cylinder-tracker-448710.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
