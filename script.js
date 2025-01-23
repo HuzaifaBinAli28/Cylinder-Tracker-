@@ -1,8 +1,27 @@
-// Initialize stock array from localStorage or empty array
-let stock = JSON.parse(localStorage.getItem('stock')) || [];
-console.log('Loaded stock from localStorage:', stock);
+// Global variable to hold stock data from Google Sheets
+let stock = [];
 
-// Add event listener to the form
+// Fetch stock data from Google Sheets JSON
+async function fetchStock() {
+    try {
+        // Replace with your actual Google Sheets URL (as a public JSON endpoint)
+        const response = await fetch('https://spreadsheets.google.com/feeds/list/[SPREADSHEET_ID]/od6/public/values?alt=json');
+        const data = await response.json();
+
+        // Map the data from Google Sheets to match our stock structure
+        stock = data.feed.entry.map(item => ({
+            name: item.gsx$name.$t,  // Replace with actual column names
+            cylinderNumber: item.gsx$cylindernumber.$t  // Replace with actual column names
+        }));
+
+        // Display stock in the table
+        displayStock();
+    } catch (error) {
+        console.error('Error fetching stock data:', error);
+    }
+}
+
+// Add event listener to the form for adding new stock items
 document.getElementById('stockForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -18,16 +37,12 @@ document.getElementById('stockForm').addEventListener('submit', function (e) {
     // Add new stock item to the array
     stock.push({ name, cylinderNumber });
 
-    // Save stock to localStorage
-    localStorage.setItem('stock', JSON.stringify(stock));
-    console.log('Data saved to localStorage:', stock);
+    // Call the function to display stock (this will only update the table for now)
+    displayStock();
 
     // Reset form
     this.reset();
     document.getElementById('name').focus();  // Auto focus on name input after reset
-
-    // Refresh the table
-    displayStock();
 });
 
 // Function to display stock in the table
@@ -37,7 +52,6 @@ function displayStock() {
 
     stock.forEach((item, index) => {
         const row = document.createElement('tr');
-
         row.innerHTML = `
             <td>${item.name}</td>
             <td>${item.cylinderNumber}</td>
@@ -46,20 +60,16 @@ function displayStock() {
                 <button class="delete" onclick="deleteStock(${index})">Delete</button>
             </td>
         `;
-
         tableBody.appendChild(row);
     });
-    console.log('Stock displayed in table:', stock);
 }
 
 // Function to delete stock
 function deleteStock(index) {
+    // Remove item from the stock array
     stock.splice(index, 1);
-
-    // Update localStorage
-    localStorage.setItem('stock', JSON.stringify(stock));
-    console.log('Data saved to localStorage after deletion:', stock);
-
+    
+    // Refresh the table after deletion
     displayStock();
 }
 
@@ -69,24 +79,26 @@ function editStock(index) {
     document.getElementById('name').value = item.name;
     document.getElementById('cylinderNumber').value = item.cylinderNumber;
 
-    // Remove the item from stock
+    // Remove the item from stock array after editing (we'll re-add it when submitting the form)
     deleteStock(index);
 }
 
 // Function to search stock
 function searchStock() {
     const query = document.getElementById('searchBox').value.toLowerCase();
+
+    // Filter stock based on search query
     const filteredStock = stock.filter(item =>
         item.name.toLowerCase().includes(query) ||
         item.cylinderNumber.toLowerCase().includes(query)
     );
 
+    // Display filtered stock in the table
     const tableBody = document.getElementById('stockTable').querySelector('tbody');
     tableBody.innerHTML = '';
 
     filteredStock.forEach((item, index) => {
         const row = document.createElement('tr');
-
         row.innerHTML = `
             <td>${item.name}</td>
             <td>${item.cylinderNumber}</td>
@@ -95,11 +107,9 @@ function searchStock() {
                 <button class="delete" onclick="deleteStock(${index})">Delete</button>
             </td>
         `;
-
         tableBody.appendChild(row);
     });
-    console.log('Filtered stock displayed:', filteredStock);
 }
 
-// Display stock on page load
-displayStock();
+// Display stock on page load by calling fetchStock
+fetchStock();
